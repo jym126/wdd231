@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Jose Martinez</title>
+    <meta name="description"
+        content="WDD 131 - Dynamic Web Fundamentals by Jose Martinez. Learn about web development card and my background.">
+    <meta name="author" content="Jose Martinez">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 131: Dynamic Web Fundamentals - Jose Martinez</h1>
+        <nav>
+            <a href="https://www.linkedin.com/in/jose-l-martinez-r/?locale=en_US" target="_blank">LinkedIn</a>
+            <a href="https://byui.instructure.com/" target="_blank">I-Learn</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p41#p41"
+                target="_blank">Scripture</a>
+            <a href="#">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Card Section (Left) -->
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="aboutme">
+                <p class="aboutme">My name is Jose Martinez. I was born in Dominican Republic and currently live in
+                    Asturias, Spain.
+                    I work as a Technical Account Manager. I love the gospel and my family. I enjoy playing basketball,
+                    cooking and of course coding.</p>
+                <img src="images/jose.jpg" alt="Jose Martinez's photo" class="profile-photo" width="184" height="184">
+            </div>
+
+            <svg class="separator" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradiente" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop class="stop1" offset="0%" />
+                        <stop class="stop2" offset="100%" />
+                    </linearGradient>
+                </defs>
+                <path class="separator-path" d="M0 5 Q 25 0, 50 5 T 95 5" fill="transparent" />
+            </svg>
+            
+
+
+            <h3 class="location">Asturias - Spain</h3>
+            <div class="country">
+                <img src="images/spainflag.jpg" alt="Spain flag" class="profile-photo" width="184" height="184">
+                <p>Asturias, Spain, is known for its diverse flora and fauna. It is one of the most biodiverse
+                    regions in Spain, home to many endemic species like the Cantabrian brown bear and the Iberian wolf.
+                    Asturias is famous for its lush green landscapes, rugged coastline, traditional food,
+                    and the Picos de Europa mountains, offering a stunning mix of natural beauty and rich cultural
+                    heritage.</p>
+            </div>
+        </section>
+
+        <!-- card Section (Right) -->
+        <section class="card">
+            <h2>Web Dev card</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a></li>
+                <li><a href="https://pixabay.com/es/" target="_blank">Pixabay</a></li>
+                <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank">FreCodeCamp</a></li>
+                <li><a href="https://coolors.co/" target="_blank">Coolors</a></li>
+                <li><a href="https://www.netlify.com/" target="_blank">Netlify</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Jose Martinez. Asturias, Spain</p>
+        <p id="lastmodified">Last Modification: <span></span></p>
+    </footer>
+</body>
+
+</html>
