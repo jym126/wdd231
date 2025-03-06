@@ -1,83 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Dynamic Web Fundamentals - Jose Martinez</title>
-    <meta name="description"
-        content="WDD 131 - Dynamic Web Fundamentals by Jose Martinez. Learn about web development card and my background.">
-    <meta name="author" content="Jose Martinez">
-    <link rel="stylesheet" href="styles/base.css">
-    <script src="scripts/getdates.js" defer></script>
+    <meta name="description" content="Chamber of Commerce website promoting local business interests and community growth.">
+    <meta name="author" content="Your Name">
+    <title>Chamber of Commerce</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="/scripts/scripts.js" defer></script>
 </head>
-
 <body>
     <header>
-        <h1>WDD 131: Dynamic Web Fundamentals - Jose Martinez</h1>
+        <div class="header-content">
+            <img src="images/logo.png" alt="Chamber of Commerce Logo" width="100">
+            <span>Jose L. Martinez</span>
+        </div>
         <nav>
-            <a href="https://www.linkedin.com/in/jose-l-martinez-r/?locale=en_US" target="_blank">LinkedIn</a>
-            <a href="https://byui.instructure.com/" target="_blank">I-Learn</a>
-            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p41#p41"
-                target="_blank">Scripture</a>
-            <a href="#">Final Project</a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Card Section (Left) -->
-        <section class="card">
-            <h2>About Me</h2>
-            <div class="aboutme">
-                <p class="aboutme">My name is Jose Martinez. I was born in Dominican Republic and currently live in
-                    Asturias, Spain.
-                    I work as a Technical Account Manager. I love the gospel and my family. I enjoy playing basketball,
-                    cooking and of course coding.</p>
-                <img src="images/jose.jpg" alt="Jose Martinez's photo" class="profile-photo" width="184" height="184">
-            </div>
-
-            <svg class="separator" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="gradiente" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop class="stop1" offset="0%" />
-                        <stop class="stop2" offset="100%" />
-                    </linearGradient>
-                </defs>
-                <path class="separator-path" d="M0 5 Q 25 0, 50 5 T 95 5" fill="transparent" />
-            </svg>
-            
-
-
-            <h3 class="location">Asturias - Spain</h3>
-            <div class="country">
-                <img src="images/spainflag.jpg" alt="Spain flag" class="profile-photo" width="184" height="184">
-                <p>Asturias, Spain, is known for its diverse flora and fauna. It is one of the most biodiverse
-                    regions in Spain, home to many endemic species like the Cantabrian brown bear and the Iberian wolf.
-                    Asturias is famous for its lush green landscapes, rugged coastline, traditional food,
-                    and the Picos de Europa mountains, offering a stunning mix of natural beauty and rich cultural
-                    heritage.</p>
-            </div>
+        <h1>Home</h1>
+        <section class="hero">
+            <h2>Welcome to Our Community</h2>
+            <p>Discover the benefits of joining our Chamber of Commerce and supporting local businesses.</p>
+            <a href="join.html" class="cta-button">Join Us</a>
         </section>
 
-        <!-- card Section (Right) -->
-        <section class="card">
-            <h2>Web Dev card</h2>
-            <ul>
-                <li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a></li>
-                <li><a href="https://pixabay.com/es/" target="_blank">Pixabay</a></li>
-                <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
-                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-                <li><a href="https://www.freecodecamp.org/" target="_blank">FreCodeCamp</a></li>
-                <li><a href="https://coolors.co/" target="_blank">Coolors</a></li>
-                <li><a href="https://www.netlify.com/" target="_blank">Netlify</a></li>
-            </ul>
+        <section class="community-info">
+            <h2>Community Information</h2>
+            <p>Learn about our vibrant community, its history, and upcoming events.</p>
+        </section>
+
+        <section class="business-spotlight">
+            <h2>Business Spotlight</h2>
+            <div class="business">
+                <h3>Local Business 1</h3>
+                <p>Supporting our community for over 10 years.</p>
+            </div>
+            <div class="business">
+                <h3>Local Business 2</h3>
+                <p>Innovative solutions for modern challenges.</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Jose Martinez. Asturias, Spain</p>
-        <p id="lastmodified">Last Modification: <span></span></p>
+        <p>&copy; <span id="current-year"></span> | Jose L. Martinez | Your State/Country</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
-
 </html>
