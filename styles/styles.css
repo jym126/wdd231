@@ -31,6 +31,16 @@ header span {
     font-weight: bold;
 }
 
+.logo{
+    width: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+.studentName {
+    margin-left: 20px;
+}
+
 nav {
     position: relative;
 }
