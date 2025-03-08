@@ -89,7 +89,7 @@ nav ul li a:hover, nav ul li a.active {
 .country {
     color: #fff;
     text-align: center;
-    background: url('/images/asturias.jpg') no-repeat center center/cover;
+    background: url('https://res.cloudinary.com/dmimages/image/upload/v1732357514/hero-image_kyjmfg.webp') no-repeat center center/cover;
 }
 
 .country p {
