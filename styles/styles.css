@@ -6,6 +6,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    text-align: center; /* Centralize all text */
 }
 
 header {
@@ -31,10 +32,11 @@ header span {
     font-weight: bold;
 }
 
-.logo{
-    width: 150px;
+.logo {
+    width: 100px;
     margin: 0;
     padding: 0;
+    border-radius: 8px;
 }
 
 .studentName {
@@ -79,10 +81,41 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .hero {
-    background: url('/images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.country {
     color: #fff;
-    padding: 100px 20px;
     text-align: center;
+    background: url('/images/asturias.jpg') no-repeat center center/cover;
+}
+
+.country p {
+    color: yellow;
+}
+
+.course-work {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    border: #411f97 2px solid;
+    border-radius: 5px;
+    width: 48%;
+    height: 300px;
+    padding-top: 0;
+}
+
+.hero-content h2 {
+    background-color: #143e69;
+    margin: 0;
+    color: aliceblue;
 }
 
 .hero h2 {
@@ -99,7 +132,7 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1.2em;
 }
 
-.community-info, .business-spotlight {
+.community-info, .business-spotlight, .course-work {
     padding: 20px;
     text-align: center;
 }
@@ -112,8 +145,58 @@ nav ul li a:hover, nav ul li a.active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-footer {
+
+.filter-buttons {
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
     background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #34495e;
+}
+
+#courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    text-align: left;
+}
+
+.course-card.completed {
+    border-left: 5px solid #27ae60;
+}
+
+.course-card:not(.completed) {
+    border-left: 5px solid #e74c3c;
+}
+
+#total-credits {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; /* Same as navbar */
     color: #fff;
     text-align: center;
     padding: 10px 0;
