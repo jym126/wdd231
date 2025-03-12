@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Tech Innovators",
+      "address": "123 Innovation Drive, Silicon Valley, CA",
+      "phone": "123-456-7890",
+      "website": "https://techinnovators.com",
+      "image": "tech_innovators.jpg",
+      "membershipLevel": 3,
+      "description": "Leading the world in innovative tech solutions."
+    },
+    {
+      "name": "Green Energy Corp",
+      "address": "456 Solar Lane, Austin, TX",
+      "phone": "987-654-3210",
+      "website": "https://greenenergy.com",
+      "image": "green_energy.jpg",
+      "membershipLevel": 2,
+      "description": "Pioneers in sustainable energy solutions."
+    },
+    {
+      "name": "EduSmart",
+      "address": "789 Learning Blvd, Boston, MA",
+      "phone": "555-123-4567",
+      "website": "https://edusmart.com",
+      "image": "edusmart.jpg",
+      "membershipLevel": 1,
+      "description": "Innovative education technology for the future."
+    },
+    {
+      "name": "Health First",
+      "address": "101 Wellness Way, Miami, FL",
+      "phone": "321-654-9870",
+      "website": "https://healthfirst.com",
+      "image": "health_first.jpg",
+      "membershipLevel": 3,
+      "description": "Committed to providing the best healthcare services."
+    },
+    {
+      "name": "FinSecure",
+      "address": "202 Finance Street, New York, NY",
+      "phone": "444-555-6666",
+      "website": "https://finsecure.com",
+      "image": "finsecure.jpg",
+      "membershipLevel": 2,
+      "description": "Experts in financial security solutions."
+    },
+    {
+      "name": "BuildRight",
+      "address": "303 Construction Ave, Dallas, TX",
+      "phone": "777-888-9999",
+      "website": "https://buildright.com",
+      "image": "buildright.jpg",
+      "membershipLevel": 1,
+      "description": "Leading provider of construction services."
+    },
+    {
+      "name": "AgriWorld",
+      "address": "404 Farm Lane, Des Moines, IA",
+      "phone": "111-222-3333",
+      "website": "https://agriworld.com",
+      "image": "agriworld.jpg",
+      "membershipLevel": 2,
+      "description": "Innovations in sustainable agriculture."
+    }
+  ]
+  

@@ -54,7 +54,8 @@ nav ul li a {
     transition: background-color 0.3s;
 }
 
-nav ul li a:hover, nav ul li a.active {
+nav ul li a:hover,
+nav ul li a.active {
     background-color: #34495e;
     border-radius: 5px;
 }
@@ -94,7 +95,8 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1.2em;
 }
 
-.community-info, .business-spotlight {
+.community-info,
+.business-spotlight {
     padding: 20px;
     text-align: center;
 }
@@ -117,6 +119,93 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+/*Directory page*/
+
+.title {
+    text-align: center;
+}
+
+.view-toggle {
+    margin: 10px 0;
+}
+
+#membersContainer.grid {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    text-align: center;
+    width: 20%;
+    height: fit-content;
+    min-height: 400px;
+    margin: 10px;
+    border: 1px solid #535050;
+    padding: 10px;
+    box-shadow: 8px 6px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: #fcf9ec;
+}
+
+#membersContainer.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-card img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.member-card h3 {
+    margin-top: 0.5em;
+}
+
+/*Join page*/
+
+.join-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.join-form label {
+    margin: 10px 0 5px;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.join-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.join-form button:hover {
+    background-color: #0056b3;
 }
 
 /* Responsive Design */

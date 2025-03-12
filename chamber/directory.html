@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce website promoting local business interests and community growth.">
-    <meta name="author" content="Your Name">
-    <title>Chamber of Commerce</title>
+    <meta name="description" content="Chamber of Commerce directory showcasing member businesses.">
+    <meta name="author" content="Jose L. Martinez">
+    <title>Member Directory - Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="scripts.js" defer></script>
@@ -19,43 +19,27 @@
         <nav>
             <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
             <ul id="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="chamber.html">Chamber</a></li>
-                <li><a href="https://github.com/jym126" target="_blank">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/jose-l-martinez-r/?locale=en_US" target="_blank">LinkedIn</a></li>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="chamber.html">Discover</a></li>
+                <li><a href="#" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Home</h1>
-        <section class="hero">
-            <h2>Welcome to Our Community</h2>
-            <p>Discover the benefits of joining our Chamber of Commerce and supporting local businesses.</p>
-            <a href="join.html" class="cta-button">Join Us</a>
-        </section>
-
-        <section class="community-info">
-            <h2>Community Information</h2>
-            <p>Learn about our vibrant community, its history, and upcoming events.</p>
-        </section>
-
-        <section class="business-spotlight">
-            <h2>Business Spotlight</h2>
-            <div class="business">
-                <h3>Local Business 1</h3>
-                <p>Supporting our community for over 10 years.</p>
-            </div>
-            <div class="business">
-                <h3>Local Business 2</h3>
-                <p>Innovative solutions for modern challenges.</p>
-            </div>
-        </section>
+        <h1 class="title">Member Directory</h1>
+        <div class="view-toggle">
+            <button id="gridView">Grid View</button>
+            <button id="listView">List View</button>
+        </div>
+        <section id="membersContainer" class="grid"></section>
     </main>
 
     <footer>
         <p>&copy; <span id="current-year"></span> | Jose L. Martinez | Asturias/Spain</p>
         <p id="lastModified"></p>
     </footer>
+
 </body>
 </html>
