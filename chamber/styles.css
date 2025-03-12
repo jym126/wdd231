@@ -68,9 +68,14 @@ nav ul li a:hover, nav ul li a.active {
     cursor: pointer;
 }
 
+.logoImage {
+    width: 50px;
+    border-radius: 5px;
+}
+
 .hero {
-    background: url('images/hero.jpg') no-repeat center center/cover;
-    color: #fff;
+    background: url('images/asturias.jpg') no-repeat center center/cover;
+    color: #f5e8e1;
     padding: 100px 20px;
     text-align: center;
 }
