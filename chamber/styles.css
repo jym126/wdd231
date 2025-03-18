@@ -95,6 +95,11 @@ nav ul li a.active {
     font-size: 1.2em;
 }
 
+.community-info {
+    display:grid;
+    grid-template-columns: 60% 20% 20%;
+}
+
 .community-info,
 .business-spotlight {
     padding: 20px;
