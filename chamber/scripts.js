@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const gridButton = document.getElementById('gridView');
     const listButton = document.getElementById('listView');
 
-    // Ensure gridButton and listButton exist
     if (gridButton && listButton && container) {
         gridButton.addEventListener('click', () => {
             container.classList.remove('list');
@@ -38,80 +37,144 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Elements not found: gridButton, listButton or container');
     }
 
-    // Fetch Members function remains the same
+    // Fetch Members function
     async function fetchMembers() {
         try {
             const response = await fetch('data/members.json');
             const members = await response.json();
-            displayMembers(members);
+
+            // Verificar si el contenedor de miembros existe antes de llamar a displayMembers
+            const container = document.getElementById('membersContainer');
+            if (container) {
+                displayMembers(members);
+            }
+
+            // Verificar si el contenedor de spotlight existe antes de llamar a displaySpotlightMembers
+            const spotlightContainer = document.getElementById('spotlight-container');
+            if (spotlightContainer) {
+                displaySpotlightMembers(members);
+            }
         } catch (error) {
             console.error('Error fetching member data:', error);
         }
     }
 
-    function displayMembers(members) {
-        container.innerHTML = '';
-        members.forEach(member => {
+    // Function to filter Gold (membershipLevel 3) and Silver (membershipLevel 2) members
+    function getSpotlightMembers(members) {
+        const spotlightMembers = members.filter(member => member.membershipLevel === 3 || member.membershipLevel === 2);
+
+        // Randomly shuffle the array
+        for (let i = spotlightMembers.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [spotlightMembers[i], spotlightMembers[j]] = [spotlightMembers[j], spotlightMembers[i]];
+        }
+
+        return spotlightMembers.slice(0, Math.floor(Math.random() * 2) + 2);
+    }
+
+    // Function to display spotlight members
+    function displaySpotlightMembers(members) {
+        const spotlightContainer = document.getElementById('spotlight-container');
+        const spotlightMembers = getSpotlightMembers(members);
+
+        if (spotlightContainer) {
+            spotlightContainer.innerHTML = ''; // Clear any previous content
+        } else {
+            console.error('Spotlight container not found');
+        }
+
+        spotlightMembers.forEach(member => {
             const memberCard = document.createElement('div');
             memberCard.className = 'member-card';
+
             memberCard.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name}">
+                <img src="images/${member.image}" alt="${member.name} Logo" class="member-logo" width="100">
                 <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>${member.description}</p>
-                <p>Membership Level: ${member.membershipLevel}</p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                <p><strong>Membership Level:</strong> ${member.membershipLevel === 3 ? 'Gold' : 'Silver'}</p>
             `;
-            container.appendChild(memberCard);
+
+            spotlightContainer.appendChild(memberCard);
         });
     }
 
+    // Function to display all members in the directory
+    function displayMembers(members) {
+        const container = document.getElementById('membersContainer');
+
+        if (container) {
+            container.innerHTML = ''; // Clear previous members if any
+
+            members.forEach(member => {
+                const memberCard = document.createElement('div');
+                memberCard.className = 'member-card';
+
+                memberCard.innerHTML = `
+                    <img src="images/${member.image}" alt="${member.name} Logo" class="member-logo" width="100">
+                    <h3>${member.name}</h3>
+                    <p><strong>Phone:</strong> ${member.phone}</p>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                    <p><strong>Membership Level:</strong> ${member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Other'}</p>
+                `;
+
+                container.appendChild(memberCard);
+            });
+        }
+    }
+
+    // Call the fetchMembers function to load members
     fetchMembers();
 
     // Weather API
     const apiKey = 'bb9cf104e9f44affcb2307eb90bada12'; // Replace with your OpenWeatherMap API key
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Asturias,ES&units=metric&appid=${apiKey}`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Asturias,ES&appid=${apiKey}`;
 
     // Fetch the current weather data
     fetch(weatherUrl)
         .then(response => response.json())
         .then(data => {
             const weatherDescription = data.weather[0].description;
-            const temperature = data.main.temp;
+            const temperature = parseInt(data.main.temp);
             const humidity = data.main.humidity;
 
             // Display current weather in the page
             document.querySelector('.community-info .current-weather').innerHTML = `
                 <h2>Current Weather</h2>
-                <p>Temperature: ${temperature}°C</p>
+                <p>Temperature: ${temperature}°F</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Condition: ${weatherDescription}</p>
             `;
         })
         .catch(error => console.error('Error fetching weather data:', error));
 
-    // Fetch the forecast weather data (next 5 days)
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Asturias,ES&appid=${apiKey}`;
-    fetch(forecastUrl)
-        .then(response => response.json())
-        .then(data => {
-            const forecastContainer = document.querySelector('.community-info .weather-forecast');
-            forecastContainer.innerHTML = '<h2>Weather Forecast</h2>';
+    // Fetch the forecast weather data (next 3 days)
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Asturias,ES&appid=${apiKey}`;
+fetch(forecastUrl)
+    .then(response => response.json())
+    .then(data => {
+        const forecastContainer = document.querySelector('.community-info .weather-forecast');
+        forecastContainer.innerHTML = '<h2>Weather Forecast</h2>';
 
-            // Loop through the forecast data and display it (every 8th entry represents the next day)
-            for (let i = 0; i < data.list.length; i += 8) {
-                const forecast = data.list[i];
-                const date = new Date(forecast.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
-                const temp = forecast.main.temp;
-                const description = forecast.weather[0].description;
+        // Limit to 3 days, every 8th entry represents the next day (since API gives forecast every 3 hours)
+        for (let i = 0; i < 24; i += 8) {  // We only need the first 3 days
+            if (i >= 24) break; // Exit after 3 days
 
-                forecastContainer.innerHTML += `
-                    <div>
-                        <h3>${date}: ${temp}°F</h3>
-                    </div>
-                `;
-            }
-        })
-        .catch(error => console.error('Error fetching forecast data:', error));
+            const forecast = data.list[i];
+            const date = new Date(forecast.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+            const temp = parseInt(forecast.main.temp);
+            const description = forecast.weather[0].description;
+
+            forecastContainer.innerHTML += `
+                <div>
+                    <h3>${date}: ${temp}°F</h3>
+                    <p>Condition: ${description}</p>
+                </div>
+            `;
+        }
+    })
+    .catch(error => console.error('Error fetching forecast data:', error));
+
 });

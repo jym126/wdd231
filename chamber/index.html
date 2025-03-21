@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce website promoting local business interests and community growth.">
+    <meta name="description"
+        content="Chamber of Commerce website promoting local business interests and community growth.">
     <meta name="author" content="Your Name">
     <title>Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
     <script src="scripts.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -28,7 +32,6 @@
     </header>
 
     <main>
-        <h1>Home</h1>
         <section class="hero">
             <h2>Welcome to Our Community</h2>
             <p>Discover the benefits of joining our Chamber of Commerce and supporting local businesses.</p>
@@ -36,15 +39,38 @@
         </section>
 
         <section class="community-info">
-            <div>
+            <div class="community-events">
                 <h2>Events</h2>
-                <p>Learn about our vibrant community, its history, and upcoming events.</p>
+                <p>1. Carnival Celebrations:
+
+                    Carnaval de Teverga: Experience the vibrant Carnival of Teverga, celebrated with colorful parades,
+                    music, and traditional festivities. ​
+                    Turismo Asturias
+
+                    Carnaval de Llanes: Join the festivities in Llanes, featuring a grand costume parade, live music,
+                    and various entertainment activities. ​
+                    Turismo Asturias
+
+                    Carnaval de Cangas de Onís: Enjoy the lively Carnival in Cangas de Onís, known for its creative
+                    costumes and spirited parades starting from the Capilla de Santa Cruz. ​
+
+                    2. Music and Performances:
+
+                    Tizón Sound Concert: Attend the Tizón Sound event featuring performances by Lions Way and Maverick,
+                    offering a dynamic punk-rock experience. ​
+                    RequeSound.com - Rock and roll!!
+                    3. Cultural and Traditional Festivals:
+
+                    Feria Astur-Galaica de Mieres: Visit the XXIII Astur-Galaica Fair in Mieres del Camino, showcasing
+                    regional crafts, gastronomy, and cultural exhibitions. ​</p>
             </div>
-            <div class="current-weather">
-                <h2>Current Weather</h2>
-            </div>
-            <div class="weather-forecast">
-                <h2>Weather Forecast</h2>
+            <div class="community-weather">
+                <div class="current-weather">
+                    <h2>Current Weather</h2>
+                </div>
+                <div class="weather-forecast">
+                    <h2>Weather Forecast</h2>
+                </div>
             </div>
         </section>
 
@@ -52,7 +78,7 @@
             <h2>Business Spotlight</h2>
             <div class="business">
                 <h3>Local Business 1</h3>
-                <p>Supporting our community for over 10 years.</p>
+                <div id="spotlight-container"></div>
             </div>
             <div class="business">
                 <h3>Local Business 2</h3>
@@ -66,4 +92,5 @@
         <p id="lastModified"></p>
     </footer>
 </body>
+
 </html>
