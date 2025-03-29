@@ -49,7 +49,7 @@
                 <!-- Organizational Title -->
                 <label for="organization-title" title="Your position in the organization" aria-label="Your position in the organization">
                     Organizational Title:
-                    <input type="text" id="organization-title" name="organization-title" required title="Enter your organizational title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title" placeholder="Manager" />
+                    <input type="text" id="organization-title" name="organization-title" required title="Enter your organizational title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title" placeholder="Manager">
                 </label>
 
                 <!-- Email -->
@@ -74,6 +74,7 @@
                 <label for="membership" title="Choose your membership level">
                     Membership Level:
                     <select id="membership" name="membership" required>
+                        <option value="" disabled selected>Select a Membership Level</option>
                         <option value="np">NP Membership</option>
                         <option value="bronze">Bronze Membership</option>
                         <option value="silver">Silver Membership</option>
@@ -88,7 +89,7 @@
                 </label>
 
                 <!-- Hidden Timestamp -->
-                <input type="hidden" id="timestamp" name="timestamp" value="" />
+                <input type="hidden" id="timestamp" name="timestamp" value="">
 
                 <!-- Submit Button -->
                 <input type="submit" value="Join Now" title="Submit your membership application">
