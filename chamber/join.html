@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Join the Chamber of Commerce and become a part of our thriving business community.">
+    <meta name="description" content="Join the Chamber of Commerce and become a part of our thriving business community.">
     <meta name="author" content="Jose L. Martinez">
     <title>Join - Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="scripts.js" defer></script> <!-- Referencia al archivo externo de JS -->
 </head>
 
 <body>
@@ -34,33 +33,121 @@
         <section class="join-form">
             <h2>Become a Member</h2>
             <p>Fill out the form below to join our community and promote your business.</p>
-            <form action="#" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+            <form action="thankyou.html" method="get">
+                <!-- First Name -->
+                <label for="first-name" title="Your first name" aria-label="Your first name">
+                    First Name:
+                    <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Enter your first name" placeholder="John">
+                </label>
 
-                <label for="business">Business Name:</label>
-                <input type="text" id="business" name="business" required>
+                <!-- Last Name -->
+                <label for="last-name" title="Your last name" aria-label="Your last name">
+                    Last Name:
+                    <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Enter your last name" placeholder="Doe">
+                </label>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <!-- Organizational Title -->
+                <label for="organization-title" title="Your position in the organization" aria-label="Your position in the organization">
+                    Organizational Title:
+                    <input type="text" id="organization-title" name="organization-title" required title="Enter your organizational title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title" placeholder="Manager" />
+                </label>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <!-- Email -->
+                <label for="email" title="Your email address" aria-label="Your email address">
+                    Email:
+                    <input type="email" id="email" name="email" required autocomplete="email" title="Enter your email address" placeholder="you@example.com">
+                </label>
 
-                <label for="membership">Membership Level:</label>
-                <select id="membership" name="membership">
-                    <option value="1">Member</option>
-                    <option value="2">Silver</option>
-                    <option value="3">Gold</option>
-                </select>
+                <!-- Mobile Number -->
+                <label for="phone" title="Your mobile phone number" aria-label="Your mobile phone number">
+                    Mobile Phone:
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Enter your mobile phone number" placeholder="+123456789">
+                </label>
 
-                <label for="description">Business Description:</label>
-                <textarea id="description" name="description" rows="4"></textarea>
+                <!-- Business Name -->
+                <label for="business-name" title="The name of your business" aria-label="The name of your business">
+                    Business/Organization Name:
+                    <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Enter the name of your business" placeholder="Business Inc.">
+                </label>
 
-                <button type="submit">Join Now</button>
+                <!-- Membership Level -->
+                <label for="membership" title="Choose your membership level">
+                    Membership Level:
+                    <select id="membership" name="membership" required>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <!-- Business Description -->
+                <label for="description" title="Describe your business" aria-label="Describe your business">
+                    Business Description:
+                    <textarea id="description" name="description" title="Enter your business description" rows="4"></textarea>
+                </label>
+
+                <!-- Hidden Timestamp -->
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
+
+                <!-- Submit Button -->
+                <input type="submit" value="Join Now" title="Submit your membership application">
             </form>
+
+            <!-- Membership Cards -->
+            <div class="membership-cards-container">
+                <div class="membership-card" data-level="NP">
+                    <h3>NP Membership</h3>
+                    <a href="#" class="select-membership" data-target="np-modal">Learn More</a>
+                </div>
+                <div class="membership-card" data-level="Bronze">
+                    <h3>Bronze Membership</h3>
+                    <a href="#" class="select-membership" data-target="bronze-modal">Learn More</a>
+                </div>
+                <div class="membership-card" data-level="Silver">
+                    <h3>Silver Membership</h3>
+                    <a href="#" class="select-membership" data-target="silver-modal">Learn More</a>
+                </div>
+                <div class="membership-card" data-level="Gold">
+                    <h3>Gold Membership</h3>
+                    <a href="#" class="select-membership" data-target="gold-modal">Learn More</a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <!-- Modals for Membership Information -->
+    <div id="np-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>NP Membership</h2>
+            <p>NP Membership is for non-profit organizations and there is no fee.</p>
+        </div>
+    </div>
+
+    <div id="bronze-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Bronze Membership</h2>
+            <p>Bronze Membership offers basic benefits and access to resources.</p>
+        </div>
+    </div>
+
+    <div id="silver-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Silver Membership</h2>
+            <p>Silver Membership offers more benefits including additional features.</p>
+        </div>
+    </div>
+
+    <div id="gold-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gold Membership</h2>
+            <p>Gold Membership offers premium benefits and full access to all resources.</p>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; <span id="current-year"></span> | Jose L. Martinez | Asturias/Spain</p>

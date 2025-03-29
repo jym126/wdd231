@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Chamber of Commerce.">
+    <meta name="author" content="Jose L. Martinez">
+    <title>Thank You for Joining - Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img class="logoImage" src="images/jose.jpg" alt="Chamber of Commerce Logo" width="100">
+            <span>Jose L. Martinez</span>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="title">Thank You for Joining the Chamber of Commerce!</h1>
+        <p>We appreciate your interest in becoming a member of our thriving business community.</p>
+        <section class="thank-you-info">
+            <h2>Your Submission Details:</h2>
+            <p><strong>First Name:</strong> <span id="first-name-display"></span></p>
+            <p><strong>Last Name:</strong> <span id="last-name-display"></span></p>
+            <p><strong>Email:</strong> <span id="email-display"></span></p>
+            <p><strong>Mobile Phone:</strong> <span id="phone-display"></span></p>
+            <p><strong>Business Name:</strong> <span id="business-name-display"></span></p>
+            <p><strong>Membership Level:</strong> <span id="membership-display"></span></p>
+            <p><strong>Business Description:</strong> <span id="description-display"></span></p>
+            <p><strong>Timestamp:</strong> <span id="timestamp-display"></span></p>
+        </section>
+        <!-- Back to Home Button -->
+        <div class="backButton">
+            <a href="index.html">
+                <button type="button">Back to Home</button>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> | Jose L. Martinez | Asturias/Spain</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        document.getElementById('first-name-display').innerText = new URLSearchParams(window.location.search).get('first-name');
+        document.getElementById('last-name-display').innerText = new URLSearchParams(window.location.search).get('last-name');
+        document.getElementById('email-display').innerText = new URLSearchParams(window.location.search).get('email');
+        document.getElementById('phone-display').innerText = new URLSearchParams(window.location.search).get('phone');
+        document.getElementById('business-name-display').innerText = new URLSearchParams(window.location.search).get('business-name');
+        document.getElementById('membership-display').innerText = new URLSearchParams(window.location.search).get('membership');
+        document.getElementById('description-display').innerText = new URLSearchParams(window.location.search).get('description');
+        document.getElementById('timestamp-display').innerText = new URLSearchParams(window.location.search).get('timestamp');
+    </script>
+</body>
+
+</html>

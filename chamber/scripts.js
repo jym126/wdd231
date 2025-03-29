@@ -151,30 +151,69 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching weather data:', error));
 
     // Fetch the forecast weather data (next 3 days)
-const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Asturias,ES&appid=${apiKey}`;
-fetch(forecastUrl)
-    .then(response => response.json())
-    .then(data => {
-        const forecastContainer = document.querySelector('.community-info .weather-forecast');
-        forecastContainer.innerHTML = '<h2>Weather Forecast</h2>';
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Asturias,ES&appid=${apiKey}`;
+    fetch(forecastUrl)
+        .then(response => response.json())
+        .then(data => {
+            const forecastContainer = document.querySelector('.community-info .weather-forecast');
+            forecastContainer.innerHTML = '<h2>Weather Forecast</h2>';
 
-        // Limit to 3 days, every 8th entry represents the next day (since API gives forecast every 3 hours)
-        for (let i = 0; i < 24; i += 8) {  // We only need the first 3 days
-            if (i >= 24) break; // Exit after 3 days
+            // Limit to 3 days, every 8th entry represents the next day (since API gives forecast every 3 hours)
+            for (let i = 0; i < 24; i += 8) {  // We only need the first 3 days
+                if (i >= 24) break; // Exit after 3 days
 
-            const forecast = data.list[i];
-            const date = new Date(forecast.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
-            const temp = parseInt(forecast.main.temp);
-            const description = forecast.weather[0].description;
+                const forecast = data.list[i];
+                const date = new Date(forecast.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+                const temp = parseInt(forecast.main.temp);
+                const description = forecast.weather[0].description;
 
-            forecastContainer.innerHTML += `
-                <div>
-                    <h3>${date}: ${temp}°F</h3>
-                    <p>Condition: ${description}</p>
-                </div>
-            `;
+                forecastContainer.innerHTML += `
+                    <div>
+                        <h3>${date}: ${temp}°F</h3>
+                        <p>Condition: ${description}</p>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => console.error('Error fetching forecast data:', error));
+
+    // Modal functionality for Membership cards
+    const modalLinks = document.querySelectorAll('.select-membership');
+    const modals = document.querySelectorAll('.modal');
+    const closeBtns = document.querySelectorAll('.close');
+
+    modalLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const targetModal = document.getElementById(link.getAttribute('data-target'));
+            targetModal.style.display = 'block';
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
         }
-    })
-    .catch(error => console.error('Error fetching forecast data:', error));
+    });
 
+    // Automatically complete membership level in form when card is clicked
+    const membershipCards = document.querySelectorAll('.membership-card');
+    const membershipLevelSelect = document.getElementById('membership-level');
+
+    membershipCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const level = card.getAttribute('data-level');
+            membershipLevelSelect.value = level; // Set the value of the membership level dropdown
+        });
+    });
+
+    // Set current timestamp in hidden field
+    document.getElementById('timestamp').value = new Date().toISOString();
 });
