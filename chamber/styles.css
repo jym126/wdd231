@@ -123,6 +123,13 @@ footer p {
     flex-wrap: wrap;
 }
 
+.welcome {
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+    background-color: #e67e22;
+}
+
 .member-card {
     border: 1px solid #ccc;
     padding: 15px;
