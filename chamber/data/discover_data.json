@@ -1,0 +1,52 @@
+{
+    "items": [
+      {
+        "name": "Asturias Museum",
+        "address": "123 Heritage St, Asturias",
+        "description": "A cultural museum showcasing the rich history and traditions of Asturias.",
+        "image": "images/bahia.jpeg"
+      },
+      {
+        "name": "Llanes Beach",
+        "address": "Llanes, Asturias",
+        "description": "A stunning coastal destination with golden sands and clear waters.",
+        "image": "images/beach.webp"
+      },
+      {
+        "name": "Covadonga Sanctuary",
+        "address": "Covadonga, Asturias",
+        "description": "A historic sanctuary nestled in the mountains, famous for its religious significance.",
+        "image": "images/sanctuary.webp"
+      },
+      {
+        "name": "Picos de Europa Park",
+        "address": "Picos de Europa, Asturias",
+        "description": "A breathtaking national park with hiking trails and scenic views.",
+        "image": "images/park.webp"
+      },
+      {
+        "name": "Gijón Aquarium",
+        "address": "456 Ocean Rd, Gijón",
+        "description": "An interactive aquarium featuring marine life from the Cantabrian Sea.",
+        "image": "images/aquarium.webp"
+      },
+      {
+        "name": "Oviedo Cathedral",
+        "address": "Oviedo, Asturias",
+        "description": "A gothic cathedral with impressive architecture and historical significance.",
+        "image": "images/cathedral.webp"
+      },
+      {
+        "name": "Cider Museum",
+        "address": "789 Apple Ln, Nava",
+        "description": "A museum dedicated to the traditional cider-making process in Asturias.",
+        "image": "images/cider-museum.webp"
+      },
+      {
+        "name": "Teatro Campoamor",
+        "address": "Oviedo, Asturias",
+        "description": "A grand theater known for hosting opera and cultural events.",
+        "image": "images/theater.webp"
+      }
+    ]
+  }
