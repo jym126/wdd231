@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </figure>
                     <address>${item.address}</address>
                     <p>${item.description}</p>
-                    <button>Learn More</button>
+                    <button><a href="https://www.turismoasturias.es/en/" target="_blank">Learn More</button>
                 `;
                 gridContainer.appendChild(card);
             });
