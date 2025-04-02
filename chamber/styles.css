@@ -320,6 +320,10 @@ footer p {
     transform: scale(1.1);
   }
 
+  .places {
+    margin: auto;
+  }
+
 /* Animations and Modal Styles for Membership Cards */
 .membership-cards-container {
     display: flex;
