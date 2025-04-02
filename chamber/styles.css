@@ -305,6 +305,7 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    padding: 10px;
   }
   .grid-item img {
     width: 100%;
