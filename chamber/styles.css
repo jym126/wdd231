@@ -291,15 +291,13 @@ footer p {
 }
 
 /*Discovery page*/
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 15px;
-    padding: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
 
 .grid-item {
     position: relative;
@@ -310,10 +308,10 @@ footer p {
   }
   .grid-item img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Altura fija */
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    background: #f0f0f0; /* Color de placeholder */
   }
   
   .grid-item:hover img {
