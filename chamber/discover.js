@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 a.href = item.link || "https://www.turismoasturias.es/en/";
                 a.target = "_blank";
                 a.rel = "noopener noreferrer";
-                a.textContent = "Places of Asturias";
+                a.textContent = "Learn More of Asturias";
                 button.appendChild(a);
                 
                 // Ensamblar tarjeta
